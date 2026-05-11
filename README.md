@@ -50,7 +50,7 @@
 
 | CVE | 类型 | 影响组件 | 复现状态 | 根因分析 | 补丁分析 | 修复验证 | 难度 |
 |---|---|---|---|---|---|---|---|
-| CVE-2017-13156 | APK 签名校验 | Package Installer / APK Signature | 未开始 | 未开始 | 未开始 | 未开始 | 低 |
+| CVE-2017-13156 | Janus / APK 签名校验绕过 | APK Signature / Package Installer | 阶段性完成 | 初版完成 | 初版完成 | 进行中 | 低 |
 | CVE-2024-0044 | 权限相关 | run-as / Framework | 未开始 | 未开始 | 未开始 | 未开始 | 中 |
 | CVE-2023-20963 | Binder / Parcel | WorkSource / Parcel | 未开始 | 未开始 | 未开始 | 未开始 | 中 |
 
