@@ -48,9 +48,10 @@
 
 ## 3. 当前复现计划
 
-| CVE | 类型 | 影响组件 | 复现状态 | 根因分析 | 补丁分析 | 修复验证 | 难度 |
+| CVE | 漏洞名称 / 类型 | 影响组件 | 当前状态 | 资料 | 根因 | 验证 | 难度 |
 |---|---|---|---|---|---|---|---|
-| CVE-2017-13156 | Janus / APK 签名校验绕过 | APK Signature / Package Installer | 阶段性完成 | 初版完成 | 初版完成 | 进行中 | 低 |
+| CVE-2017-13156 | Janus / APK 签名校验绕过 | APK Signature / Package Installer | 阶段性完成 | 初版完成 | 初版完成 | 进行中 | 中 |
+| CVE-2025-32333 | Cross-user permission bypass | Settings / SpaActivity.kt | 已选定 | 待收集 | 待分析 | 待验证 | 中 |
 ---
 
 ## 4. 单个 CVE 的记录结构
@@ -122,10 +123,18 @@ adb shell getprop ro.build.fingerprint
 ```
 
 ---
-
 ## 7. 推荐复现顺序
 
 新手阶段建议：
 
-1. CVE-2017-13156 Janus：学习 APK 签名机制和安装校验流程。
+1. CVE-2017-13156 Janus  
+   学习 APK 签名机制、ZIP/DEX 双格式、安装校验流程、补丁验证和修复后验证。
 
+2. CVE-2025-32333 Cross-user permission bypass  
+   学习 Android Settings、SpaActivity.kt、多用户模型、权限边界和 Framework 层 patch diff。
+
+当前顺序说明：
+
+- Janus 用于训练 APK 签名、文件格式解析、环境差异和补丁验证。
+- CVE-2025-32333 用于从 APK/安装机制过渡到 Android Framework 权限逻辑。
+- 后续再根据资料情况选择 Binder、system_server、PackageManager、Permission 或 native crash 相关 CVE。
