@@ -59,16 +59,14 @@
 每个 CVE 目录固定包含：
 
 ```text
+## 4. 单个 CVE 的记录结构
+
+```text
 CVE-XXXX-XXXX-Name/
-├── README.md           # 漏洞总览
-├── env.md              # 复现环境
-├── reproduce.md        # 复现过程
-├── root_cause.md       # 根因分析
-├── patch_analysis.md   # 补丁分析
-├── fix_verify.md       # 修复验证
-├── references.md       # 参考资料
-├── logs/               # 复现日志
-└── screenshots/        # 复现截图
+├── README.md       # case 入口摘要
+├── analysis.md     # 官方资料、根因、patch diff、验证矩阵、复现过程、结论
+├── metadata.yaml   # 结构化条件模型和验证状态
+└── logs/           # 原始命令输出、日志、diff summary、工具输出
 ```
 
 ---
