@@ -125,7 +125,7 @@ adb shell getprop ro.build.fingerprint
 ---
 ## 7. 推荐复现顺序
 
-新手阶段建议：
+新手阶段建议按以下顺序推进：
 
 1. CVE-2017-13156 Janus  
    学习 APK 签名机制、ZIP/DEX 双格式、安装校验流程、补丁验证和修复后验证。
@@ -133,8 +133,9 @@ adb shell getprop ro.build.fingerprint
 2. CVE-2025-32333 Cross-user permission bypass  
    学习 Android Settings、SpaActivity.kt、多用户模型、权限边界和 Framework 层 patch diff。
 
-当前顺序说明：
+当前选择逻辑：
 
 - Janus 用于训练 APK 签名、文件格式解析、环境差异和补丁验证。
 - CVE-2025-32333 用于从 APK/安装机制过渡到 Android Framework 权限逻辑。
-- 后续再根据资料情况选择 Binder、system_server、PackageManager、Permission 或 native crash 相关 CVE。
+- 后续 CVE 优先选择 Binder、system_server、PackageManager、Permission、Intent 或 native crash 相关案例。
+- 具体候选筛选记录放在 `CVE-candidates/android_cve_candidates.md` 中，根 README 不展开细节。
