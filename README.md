@@ -56,10 +56,7 @@
 
 ## 4. 单个 CVE 的记录结构
 
-每个 CVE 目录固定包含：
-
-```text
-## 4. 单个 CVE 的记录结构
+后续默认采用轻量结构：
 
 ```text
 CVE-XXXX-XXXX-Name/
@@ -69,6 +66,13 @@ CVE-XXXX-XXXX-Name/
 └── logs/           # 原始命令输出、日志、diff summary、工具输出
 ```
 
+复杂 case 可按需增加：
+
+```text
+legacy_docs/        # 旧文档归档
+screenshots/        # 复现截图
+report.md           # 对外展示报告
+```
 ---
 
 ## 5. 基本原则
@@ -136,4 +140,4 @@ adb shell getprop ro.build.fingerprint
 - Janus 用于训练 APK 签名、文件格式解析、环境差异和补丁验证。
 - CVE-2025-32333 用于从 APK/安装机制过渡到 Android Framework 权限逻辑。
 - 后续 CVE 优先选择 Binder、system_server、PackageManager、Permission、Intent 或 native crash 相关案例。
-- 具体候选筛选记录放在 `CVE-candidates/android_cve_candidates.md` 中，根 README 不展开细节。
+- 后续 CVE 由我根据 Android Framework/System、权限边界、补丁验证价值和本地可验证性进行筛选，根 README 不展开候选细节。
