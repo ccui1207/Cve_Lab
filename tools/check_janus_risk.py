@@ -133,22 +133,39 @@ def build_report(apk: pathlib.Path, apksigner: str) -> str:
 
     # 最终分类逻辑
     if does_not_verify:
-        lines.append("normal_tampering_or_invalid_signature_sample")
+        classification = "normal_tampering_or_invalid_signature_sample"
+        explanation = (
+            "The APK signature verification failed. This sample is treated as "
+            "a normal tampering or invalid-signature control sample."
+        )
     elif v1_true and v2_false and magic.startswith(ZIP_LFH):
-        # 同时满足 v1 签名有效、v2 不存在且文件头为正常 ZIP 头部，是 Janus 潜在候选
-        lines.append("v1_only_janus_candidate")
+        classification = "v1_only_janus_candidate"
+        explanation = (
+            "The APK is validly signed with v1 only and starts with a normal "
+            "ZIP Local File Header. This matches an important Janus precondition."
+        )
     elif "v2 scheme (APK Signature Scheme v2): true" in output:
-        lines.append("v2_control_sample")
+        classification = "v2_control_sample"
+        explanation = (
+            "The APK uses APK Signature Scheme v2. It is suitable as a v2 control "
+            "sample because v2 is expected to block Janus-style structural changes."
+        )
     elif magic.startswith(DEX_MAGIC_PREFIX):
-        lines.append("suspicious_dex_prefixed_file")
+        classification = "suspicious_dex_prefixed_file"
+        explanation = (
+            "The file starts with DEX magic. For a normal APK, this is abnormal "
+            "and should be investigated in a controlled local environment."
+        )
     else:
-        lines.append("unknown_or_unclassified")
+        classification = "unknown_or_unclassified"
+        explanation = (
+            "The APK does not match the current built-in classification rules."
+        )
 
+    lines.append(classification)
     lines.append("")
-    lines.append("Note:")
-    lines.append("This tool is for defensive analysis and lab documentation only.")
-    lines.append("It does not generate or modify APK files.")
-
+    lines.append("Classification explanation:")
+    lines.append(explanation)
     return "\n".join(lines) + "\n"
 
 
