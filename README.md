@@ -17,7 +17,7 @@
   ↓
 搭建复现环境
   ↓
-运行最小 PoC
+运行最小验证
   ↓
 观察漏洞现象
   ↓
@@ -27,7 +27,7 @@
   ↓
 验证修复效果
   ↓
-整理复现报告
+整理验证结论
 ```
 
 ---
@@ -51,7 +51,8 @@
 | CVE | 漏洞名称 / 类型 | 影响组件 | 当前状态 | 资料 | 根因 | 验证 | 难度 |
 |---|---|---|---|---|---|---|---|
 | CVE-2017-13156 | Janus / APK 签名校验绕过 | APK Signature / Package Installer | 阶段性完成 | 初版完成 | 初版完成 | 进行中 | 中 |
-| CVE-2025-32333 | Cross-user permission bypass | Settings / SpaActivity.kt | 已选定 | 待收集 | 待分析 | 待验证 | 中 |
+| CVE-2025-32333 | Cross-user permission bypass | Settings / SpaActivity.kt | 进行中 | 初版完成 | 分析中 | 待验证 | 中 |
+
 ---
 
 ## 4. 单个 CVE 的记录结构
@@ -73,6 +74,7 @@ legacy_docs/        # 旧文档归档
 screenshots/        # 复现截图
 report.md           # 对外展示报告
 ```
+
 ---
 
 ## 5. 基本原则
@@ -80,7 +82,7 @@ report.md           # 对外展示报告
 - 只在本人拥有或被授权的设备、模拟器、测试 ROM 中复现。
 - 不针对真实线上目标进行测试。
 - 不提供批量攻击、持久化控制、绕过检测、真实投放等内容。
-- 优先记录最小复现、现象证明、补丁分析和修复验证。
+- 优先记录最小验证、现象证明、补丁分析和修复验证。
 - 所有 PoC 在运行前都需要进行代码审查。
 
 ---
@@ -125,6 +127,7 @@ adb shell getprop ro.build.fingerprint
 ```
 
 ---
+
 ## 7. 推荐复现顺序
 
 新手阶段建议按以下顺序推进：
@@ -138,6 +141,6 @@ adb shell getprop ro.build.fingerprint
 当前选择逻辑：
 
 - Janus 用于训练 APK 签名、文件格式解析、环境差异和补丁验证。
-- CVE-2025-32333 用于从 APK/安装机制过渡到 Android Framework 权限逻辑。
+- CVE-2025-32333 用于从 APK / 安装机制过渡到 Android Framework 权限逻辑。
 - 后续 CVE 优先选择 Binder、system_server、PackageManager、Permission、Intent 或 native crash 相关案例。
-- 后续 CVE 由我根据 Android Framework/System、权限边界、补丁验证价值和本地可验证性进行筛选，根 README 不展开候选细节。
+- 后续 CVE 将根据 Android Framework/System、权限边界、补丁验证价值和本地可验证性进行筛选，根 README 不展开候选细节。
