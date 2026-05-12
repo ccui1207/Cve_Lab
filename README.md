@@ -51,9 +51,6 @@
 | CVE | 类型 | 影响组件 | 复现状态 | 根因分析 | 补丁分析 | 修复验证 | 难度 |
 |---|---|---|---|---|---|---|---|
 | CVE-2017-13156 | Janus / APK 签名校验绕过 | APK Signature / Package Installer | 阶段性完成 | 初版完成 | 初版完成 | 进行中 | 低 |
-| CVE-2024-0044 | 权限相关 | run-as / Framework | 未开始 | 未开始 | 未开始 | 未开始 | 中 |
-| CVE-2023-20963 | Binder / Parcel | WorkSource / Parcel | 未开始 | 未开始 | 未开始 | 未开始 | 中 |
-
 ---
 
 ## 4. 单个 CVE 的记录结构
@@ -131,6 +128,4 @@ adb shell getprop ro.build.fingerprint
 新手阶段建议：
 
 1. CVE-2017-13156 Janus：学习 APK 签名机制和安装校验流程。
-2. CVE-2024-0044 run-as：学习 Android 权限、包名解析、Framework 修复逻辑。
-3. CVE-2023-20963 BadParcel：学习 Binder / Parcel 读写一致性问题。
 
