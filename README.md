@@ -144,3 +144,4 @@ adb shell getprop ro.build.fingerprint
 - CVE-2025-32333 用于从 APK / 安装机制过渡到 Android Framework 权限逻辑。
 - 后续 CVE 优先选择 Binder、system_server、PackageManager、Permission、Intent 或 native crash 相关案例。
 - 后续 CVE 将根据 Android Framework/System、权限边界、补丁验证价值和本地可验证性进行筛选，根 README 不展开候选细节。
+
