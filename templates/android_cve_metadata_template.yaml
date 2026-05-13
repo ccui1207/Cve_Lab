@@ -1,0 +1,167 @@
+cve: CVE-XXXX-XXXXX
+name: Short vulnerability name
+platform: Android
+category: android_framework_or_system_vulnerability
+
+component:
+  name: null
+  layer: null
+  file: null
+  function: null
+
+official_references:
+  nvd: not_collected
+  cve_record: not_collected
+  android_security_bulletin: not_collected
+  aosp_patch: not_collected
+  osv_or_github_advisory: not_collected
+
+official_description:
+  vulnerability_type: null
+  impact: null
+  user_interaction: null
+  privileges_required: null
+  attack_vector: null
+  cvss_v3_1: null
+  cvss_vector: null
+  cwe: null
+
+patch:
+  commit: null
+  title: null
+  bulletin: null
+  reference: null
+  changed_files: []
+  direct_fix:
+    type: null
+    field: null
+    mechanism: null
+  explicit_permission_check: unknown
+  explicit_cross_user_permission_check: unknown
+  patch_level_sensitive: true
+
+reproduction_conditions:
+  version_condition:
+    affected_or_updated_aosp_versions: []
+    android_versions: []
+    sdk_versions: []
+    security_patch_before: null
+    security_patch_after_or_equal: null
+    status: not_analyzed
+    note: null
+
+  environment_condition:
+    required_device_type: null
+    emulator_suitable: unknown
+    physical_device_required: unknown
+    selinux_requirement: unknown
+    root_required: false
+    required_system_state: []
+
+  component_condition:
+    required_component: null
+    required_file: null
+    required_function: null
+    required_activity_or_service: null
+    required_provider: null
+    required_binder_service: null
+
+  trigger_condition:
+    type: null
+    surface: null
+    entrypoint: null
+    input_field: null
+    example_input: null
+    required_intent_action: null
+    required_uri_scheme: null
+    required_binder_interface: null
+    required_api_call: null
+    known_trigger_uses_malformed_input: unknown
+    unconfirmed_payload_elements: []
+
+  permission_condition:
+    required_permissions: []
+    missing_or_incorrect_permission_check: unknown
+    permission_boundary_relevance: unknown
+
+  user_context_condition:
+    cross_user_relevance: unknown
+    direct_userid_spoofing_supported: unknown
+    work_profile_or_secondary_user:
+      status: not_analyzed
+      reason: null
+
+  sample_condition:
+    required_sample_type: null
+    required_apk_signature_scheme: null
+    requires_v1_only_apk: false
+    requires_v2_disabled_or_absent: false
+    tampered_sample_is_control: false
+    tested_samples: []
+
+  patch_condition:
+    type: null
+    check_added: unknown
+    blocks_known_trigger_path: unknown
+    notes: null
+
+patch_effect_matrix:
+  baseline_case:
+    status: not_analyzed
+    note: null
+
+  malformed_or_invalid_input:
+    status: not_analyzed
+    note: null
+
+  patched_environment:
+    status: not_analyzed
+    note: null
+
+  unpatched_or_candidate_environment:
+    status: not_analyzed
+    note: null
+
+  context_specific_case:
+    status: not_analyzed
+    note: null
+
+failure_reason_taxonomy:
+  - patch_already_applied
+  - version_not_affected
+  - security_patch_too_new
+  - component_not_present
+  - trigger_input_invalid
+  - trigger_path_not_reachable
+  - permission_context_missing
+  - user_context_mismatch
+  - sample_not_matching_root_cause
+  - root_cause_misunderstood
+  - patch_effect_confirmed
+
+status:
+  overall: initialized
+  official_references: not_started
+  patch_diff_analysis: not_started
+  route_or_call_chain_analysis: not_started
+  condition_schema: not_started
+  failure_reason_taxonomy: not_started
+  reproduction: not_started
+  fix_verification: not_started
+  tool_support: not_started
+
+safety_boundary:
+  run_poc: false
+  validation_harness_allowed: true
+  exploit_development: false
+  third_party_testing: false
+  local_authorized_analysis_only: true
+  upload_weaponized_sample: false
+
+next_steps:
+  - collect_official_references
+  - analyze_aosp_patch
+  - draft_reproduction_conditions
+  - draft_patch_effect_matrix
+  - draft_failure_reason_taxonomy
+  - prepare_condition_matching_inputs
