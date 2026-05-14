@@ -1,0 +1,31 @@
+device:
+  source: adb
+  model:
+  android_version:
+  sdk:
+  security_patch:
+  fingerprint:
+  selinux:
+  root: false
+
+environment_role:
+  emulator: unknown
+  physical_device: unknown
+  aosp_or_oem: unknown
+  vendor:
+  build_type:
+
+installed_components:
+  settings_app: unknown
+  package_installer: unknown
+  work_profile: unknown
+  secondary_user: unknown
+
+sample_info:
+  apk_path:
+  signature_scheme:
+    v1:
+    v2:
+    v3:
+    v4:
+  sample_role:
