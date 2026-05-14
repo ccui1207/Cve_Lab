@@ -167,17 +167,21 @@ def choose_item(title: str, items: List[Path]) -> Optional[Path]:
         print(f"{idx}. {rel(item)}")
 
     print("0. Cancel")
+    print("b. Back")
+    print("q. Cancel")
 
     while True:
-        choice = input("\nChoose: ").strip()
-        if choice == "0":
+        choice = input("\nChoose: ").strip().lower()
+
+        if choice in {"", "0", "b", "back", "q", "quit", "cancel"}:
             return None
+
         if choice.isdigit():
             i = int(choice)
             if 1 <= i <= len(items):
                 return items[i - 1]
-        print("[!] Invalid choice.")
 
+        print(f"[!] Invalid choice. Please choose 1-{len(items)}, or 0/b/q to go back.")
 
 def list_yaml_candidates() -> List[Path]:
     candidates: List[Path] = []
