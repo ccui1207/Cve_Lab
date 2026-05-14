@@ -1,7 +1,7 @@
 # tools/collect_device_profile.py
 # -*- coding: utf-8 -*-
 
-"""
+r"""
 Collect Android device profile through adb and save as YAML.
 
 Usage:

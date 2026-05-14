@@ -1,7 +1,7 @@
 # tools/collect_apk_sample_info.py
 # -*- coding: utf-8 -*-
 
-"""
+r"""
 Collect APK signature scheme information through apksigner and save as YAML.
 
 Usage:
