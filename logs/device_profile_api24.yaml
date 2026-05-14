@@ -1,0 +1,32 @@
+device:
+  source: manual
+  model: Android SDK built for x86
+  android_version: "7.0"
+  sdk: "24"
+  security_patch: "2017-10-05"
+  fingerprint: google/sdk_google_phone_x86/generic_x86:7.0/NYC/4409132:user/release-keys
+  selinux: Enforcing
+  root: false
+
+environment_role:
+  emulator: true
+  physical_device: false
+  aosp_or_oem: AOSP
+  vendor: Google
+  build_type: emulator
+
+installed_components:
+  settings: present
+  settings_app: present
+  package_installer: present
+  work_profile: unknown
+  secondary_user: unknown
+
+sample_info:
+  apk_path: D:\Apk包\app-release.apk
+  signature_scheme:
+    v1: true
+    v2: false
+    v3: false
+    v4: false
+  sample_role: v1_only_candidate_sample

@@ -1,0 +1,32 @@
+device:
+  source: manual
+  model: sdk_gphone16k_x86_64
+  android_version: "17"
+  sdk: "37"
+  security_patch: "2026-04-05"
+  fingerprint: unknown
+  selinux: Enforcing
+  root: false
+
+environment_role:
+  emulator: true
+  physical_device: false
+  aosp_or_oem: AOSP
+  vendor: Google
+  build_type: emulator
+
+installed_components:
+  settings: present
+  settings_app: present
+  package_installer: present
+  work_profile: unknown
+  secondary_user: unknown
+
+sample_info:
+  apk_path: null
+  signature_scheme:
+    v1: null
+    v2: null
+    v3: null
+    v4: null
+  sample_role: null
