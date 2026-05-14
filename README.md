@@ -64,18 +64,16 @@ CVE-XXXX-XXXX-Name/
 ├── README.md       # case 入口摘要
 ├── analysis.md     # 官方资料、根因、patch diff、验证矩阵、复现过程、结论
 ├── metadata.yaml   # 结构化条件模型和验证状态
-└── logs/           # 原始命令输出、日志、diff summary、工具输出
+└── evidence/       # 可选，只保存关键原始证据
 ```
 
-复杂 case 可按需增加：
+说明：
 
-```text
-legacy_docs/        # 旧文档归档
-screenshots/        # 复现截图
-report.md           # 对外展示报告
-```
+- `analysis.md` 面向人工阅读。
+- `metadata.yaml` 面向工具读取。
+- `evidence/` 只保存支撑结论的关键原始证据。
+- 自动生成的中间输出、临时报表、device profile、sample info 默认放在本地 `runs/`，不提交。
 
----
 
 ## 5. 基本原则
 
